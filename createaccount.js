@@ -20,6 +20,9 @@ function CreateAccount(){
     if (!validate(name,     'name'))     return;
     if (!validate(email,    'email'))    return;
     if (!validate(password, 'password')) return;
+    //if (!validate(password.length < 8)){
+    //  document.getElementById("message").innerHTML = "**Password length must be atleast 8 characters";  
+    //  return false; }
     ctx.users.push({name,email,password,balance:100});
     setShow(false);
   }    
