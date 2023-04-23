@@ -12,6 +12,11 @@ function CreateAccount(){
         setTimeout(() => setStatus(''),3000);
         return false;
       }
+      if (password.length < 8) {
+        setStatus('Password must be at least 8 characters');
+        setTimeout(() => setStatus(''), 5000);
+        return false;
+      }
       return true;
   }
 
@@ -20,9 +25,6 @@ function CreateAccount(){
     if (!validate(name,     'name'))     return;
     if (!validate(email,    'email'))    return;
     if (!validate(password, 'password')) return;
-    //if (!validate(password.length < 8)){
-    //  document.getElementById("message").innerHTML = "**Password length must be atleast 8 characters";  
-    //  return false; }
     ctx.users.push({name,email,password,balance:100});
     setShow(false);
   }    
@@ -56,5 +58,4 @@ function CreateAccount(){
               </>
             )}
     />
-  )
-}
+  )}
