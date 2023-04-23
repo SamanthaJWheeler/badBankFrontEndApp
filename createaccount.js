@@ -37,6 +37,7 @@ function CreateAccount(){
   }
 
   return (
+    <center>
     <Card
       bgcolor="primary"
       header="Create Account"
@@ -57,5 +58,6 @@ function CreateAccount(){
               <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button>
               </>
             )}
-    />
+      />
+      </center>
   )}

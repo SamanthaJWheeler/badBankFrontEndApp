@@ -1,5 +1,6 @@
 function Home(){
   return (
+    <center>
     <Card
       txtcolor="black"
       header="Bad Bank Home Page"
@@ -7,5 +8,6 @@ function Home(){
       text="Use the navigation bar to manage your account."
       body={(<img src="panama-bank-account.jpg" className="img-fluid" alt="Responsive image"/>)}
     />    
+    </center>
   );  
 }

@@ -66,6 +66,7 @@ function Withdraw(){
   }
   
   return (
+    <center>
     <Card 
       bgcolor="primary"
       header="Withdraw"
@@ -84,5 +85,6 @@ function Withdraw(){
       </>
       )}
     />
+    </center>
   );
 };

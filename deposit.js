@@ -59,6 +59,7 @@ function Deposit() {
   }
   
   return (
+    <center>
     <Card 
       bgcolor="primary"
       header="Deposit"
@@ -77,6 +78,7 @@ function Deposit() {
       </>
       )}
     />
+    </center>
   );
 };
 
