@@ -41,7 +41,7 @@ function Deposit() {
       return false;
     }
     //Sucess message
-    setStatus ('Your deposit is Sucessful!');
+    setStatus ('Your deposit is sucessful!');
     setTimeout (() => setStatus(''), 5000);
     clearForm();
     return true;
