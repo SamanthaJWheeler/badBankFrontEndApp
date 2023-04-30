@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --config=Scripts/config/webpack.dev.js --watch",
-    "build": "webpack --config=Scripts/config/webpack.prod.js"
+    "build": "webpack --config=Scripts/config/webpack.prod.js",
+    "start": "http-server ."
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.1.2"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
   }
 }
