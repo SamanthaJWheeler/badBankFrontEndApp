@@ -1,9 +1,9 @@
 function Deposit() {
   const [show, setShow]     = React.useState(true);
   const [status, setStatus] = React.useState('');
-  const [count, setCount]   = React.useState(0);
   const [amount, setAmount] = React.useState('');
   const ctx = React.useContext(UserContext);
+  let i = ctx.users.length -1;
 
     React.useEffect(() => {
       document.title = 'Deposit';
@@ -16,7 +16,8 @@ function Deposit() {
     alert('Enter a numeric value.')
     return false;
     }
-  function validate(field, label){
+  
+    function validate(field, label){
     console.log(field);
 
     if(!field){
@@ -49,7 +50,7 @@ function Deposit() {
 
   function handleButton() {
     if (!validate(amount, 'Withdraw amount')) {return};
-    ctx.users[0].balance = parseInt(ctx.users[0].balance) + parseInt(amount);
+    ctx.users[i].balance = parseInt(ctx.users[i].balance) + parseInt(amount);
     setShow(false);
   }
 
@@ -66,13 +67,13 @@ function Deposit() {
       status={status}
       body= { show ? ( 
         <>
-        <div><p>Balance: {JSON.stringify(ctx.users[0].balance)}</p>
+        <div><p>Balance: {JSON.stringify(ctx.users[i].balance)}</p>
         <input type="input" className="form-control" id="amount" placeholder="Deposit amount" value={amount} onChange={e => !isNaN(+e.currentTarget.value) ? (setAmount(e.currentTarget.value)):(handleChange()) }/><br/><br/>
         <p><button disabled={!amount} className="btn btn-light" onClick={handleButton}>Deposit</button><br/></p></div>
       </>
   ):(
       <>
-      <div><p>Balance: {JSON.stringify(ctx.users[0].balance)}</p>
+      <div><p>Balance: {JSON.stringify(ctx.users[i].balance)}</p>
         <input type="input" className="form-control" id="amount" placeholder="Deposit amount" value={amount} onChange={e => setAmount(e.currentTarget.value)}/><br/><br/>
         <p><button disabled={!amount} className="btn btn-light" onClick={handleButton}>Deposit</button><br/></p></div>
       </>
