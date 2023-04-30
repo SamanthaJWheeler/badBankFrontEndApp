@@ -1,9 +1,9 @@
 function Withdraw(){
   const [show, setShow]     = React.useState(true);
   const [status, setStatus] = React.useState('');
-  const [count, setCount]   = React.useState(0);
   const [amount, setAmount] = React.useState('');
   const ctx = React.useContext(UserContext);
+  let i = ctx.users.length -1;
 
     React.useEffect(() => {
       document.title = 'Withdraw';
@@ -41,7 +41,7 @@ function Withdraw(){
       return false;
     }
     //Verify sufficant funds
-    else if (field > parseInt(ctx.users[0].balance)) {
+    else if (field > parseInt(ctx.users[i].balance)) {
       setStatus('Insufficant Funds!');
       setTimeout(() => setStatus (''), 5000);
       clearForm();
@@ -56,7 +56,7 @@ function Withdraw(){
 
   function handleButton() {
     if (!validate(amount, 'Withdraw amount')) {return};
-    ctx.users[0].balance = parseInt(ctx.users[0].balance) - parseInt(amount);
+    ctx.users[i].balance = parseInt(ctx.users[i].balance) - parseInt(amount);
     setShow(false);
   }
 
@@ -73,13 +73,13 @@ function Withdraw(){
       status={status}
       body= { show ? ( 
         <>
-        <div><p>Balance: {JSON.stringify(ctx.users[0].balance)}</p>
+        <div><p>Balance: {JSON.stringify(ctx.users[i].balance)}</p>
         <input type="input" className="form-control" id="amount" placeholder="Withdraw amount" value={amount} onChange={e => !isNaN(+e.currentTarget.value) ? (setAmount(e.currentTarget.value)):(handleChange()) }/><br/><br/>
         <p><button disabled={!amount} className="btn btn-light" onClick={handleButton}>Withdraw</button><br/></p></div>
       </>
   ):(
       <>
-      <div><p>Balance: {JSON.stringify(ctx.users[0].balance)}</p>
+      <div><p>Balance: {JSON.stringify(ctx.users[i].balance)}</p>
         <input type="input" className="form-control" id="amount" placeholder="Withdraw amount" value={amount} onChange={e => setAmount(e.currentTarget.value)}/><br/><br/>
         <p><button disabled={!amount} className="btn btn-light" onClick={handleButton}>Withdraw</button><br/></p></div>
       </>

@@ -2,7 +2,7 @@ function NavBar(){
   return(
     <>
       <nav 
-        className="navbar navbar-expand-lg" data-target="navbarStyle">
+        id="navbar" className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid"> 
           <a className="navbar-brand" href="#">
             <h5>
@@ -26,9 +26,10 @@ function NavBar(){
             
               <li className="nav-item">
                 <Link
-                  data-toggle="pill"
-                  className="nav-link hovertext"
-                  data-hover="Create an Account Here"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  className="nav-link"
+                  title="Create an Account Here"
                   to="createAccount"
                 >
                   Create Account
@@ -37,9 +38,10 @@ function NavBar(){
 
               <li className ="nav-item">
                 <Link
-                  data-toggle="pill"
-                  className="nav-link hovertext"
-                  data-hover="Deposit Funds"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  className="nav-link"
+                  title="Deposit Funds"
                   to ="deposit"
                   >
                     Deposit
@@ -47,9 +49,10 @@ function NavBar(){
               </li>
               <li className="nav-item">
                 <Link
-                  data-toggle="pill"
-                  className="nav-link hovertext"
-                  data-hover="Withdraw Funds"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  className="nav-link"
+                  title="Withdraw Funds"
                   to="withdraw"
                 >
                   Withdraw 
@@ -58,9 +61,10 @@ function NavBar(){
 
               <li className="nav-item">
                 <Link
-                  data-toggle="pill"
-                  className="nav-link hovertext"
-                  data-hover="View user profile information"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  className="nav-link"
+                  title="View user profile information"
                   to="alldata"
                 >
                   All Data
